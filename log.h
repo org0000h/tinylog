@@ -5,8 +5,8 @@
  *      Author: asia
  */
 
-#ifndef MYWORK_MYLOG_LOG_H_
-#define MYWORK_MYLOG_LOG_H_
+#ifndef TINY_LOG
+#define TINY_LOG
 
 #include<stdio.h>
 #include<time.h>
