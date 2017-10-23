@@ -81,3 +81,4 @@ char levelStr[10][10] = {
 #endif
 
 #endif /* MYWORK_MYLOG_LOG_H_ */
+
