@@ -22,17 +22,23 @@
  WHITE        37
 */
 
+/* if define this ,then log will be turned on .
+   if not,the log code will not be compiled to the program. */
+#define LOG_ON
 
-/*log level for printing*/
+/* if you define this,terminal print different level log in different color */
+#define COLOR_ON
+
+/* log level for printing */
 #define LOG_LEVEL INFO
 
-/*print different level log in different color*/
-#define COLOR_ON
 
 /*log level*/
 #define ERR  0
 #define WARN 1
 #define INFO 2
+
+#ifdef LOG_ON 
 
 char levelStr[10][10] = {
     "ERR ",
@@ -78,7 +84,12 @@ char levelStr[10][10] = {
                 date, __FUNCTION__, __FILE__, __LINE__, levelStr[level], ##__VA_ARGS__);\
         }\
     }while(0)
-#endif
+#endif /* color ON OFF switch */
+
+#else /* Don't compile log to the program*/
+	#define LOG(level, format, ...)
+
+#endif /* log ON OFF switch */ 
 
 #endif /* MYWORK_MYLOG_LOG_H_ */
 
